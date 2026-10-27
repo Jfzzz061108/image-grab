@@ -47,6 +47,16 @@ body {
   color: transparent;
 }
 
+.toolbar-left h1 .ver {
+  font-size: 12px;
+  font-weight: normal;
+  background: none;
+  -webkit-background-clip: initial;
+  background-clip: initial;
+  color: var(--muted);
+  vertical-align: middle;
+}
+
 .count { font-size: 13px; color: var(--muted); }
 .count b { color: var(--primary); }
 .toolbar-right { display: flex; gap: 8px; }
