@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>图提取 - 选择并下载图片</title>
+  <link rel="stylesheet" href="gallery.css">
+</head>
+<body>
+  <!-- 顶部工具栏 -->
+  <header class="toolbar">
+    <div class="toolbar-left">
+      <h1>图提取</h1>
+      <span class="count">已选 <b id="selectedCount">0</b> / 共 <b id="totalCount">0</b> 张</span>
+    </div>
+    <div class="toolbar-right">
+      <button id="selectAll" class="btn">全选</button>
+      <button id="invert" class="btn">反选</button>
+      <button id="downloadPngBtn" class="btn primary">下载 PNG</button>
+      <button id="downloadZipBtn" class="btn">打包 ZIP</button>
+    </div>
+  </header>
+
+  <!-- 图片网格 -->
+  <main id="grid" class="grid"></main>
+
+  <!-- 空状态 -->
+  <div id="empty" class="empty" hidden>
+    <p>暂无图片</p>
+    <p class="hint">请回到淘宝 / 京东 / 拼多多商家版的商品详情页，点击右下角「获取图片」按钮。</p>
+  </div>
+
+  <!-- 下载进度条 -->
+  <div id="progress" class="progress" hidden>
+    <div class="progress-track"><div id="progressFill" class="progress-fill"></div></div>
+    <span id="progressText" class="progress-text">0 / 0</span>
+  </div>
+
+  <!-- 提示 -->
+  <div id="toast" class="toast"></div>
+
+  <script src="gallery.js"></script>
+</body>
+</html>
