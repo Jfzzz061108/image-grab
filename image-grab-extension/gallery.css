@@ -139,6 +139,8 @@ body {
 
 .empty .hint { margin-top: 8px; font-size: 13px; }
 
+.empty .error { margin-top: 12px; font-size: 13px; color: #e5484d; }
+
 /* 进度条 */
 .progress {
   position: fixed;

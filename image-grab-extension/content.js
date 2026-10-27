@@ -133,6 +133,14 @@
     return Array.from(map.values());
   }
 
+  // 响应后台发来的「抓图」请求（点击扩展图标时走这里，比运行时注入更可靠）
+  chrome.runtime.onMessage.addListener((msg, sender, sendResponse) => {
+    if (msg.type === 'GRAB_IMAGES') {
+      sendResponse({ images: collectImages() });
+      return true;
+    }
+  });
+
   // 创建右下角悬浮按钮
   function createButton() {
     if (document.getElementById('__image_grab_btn')) return;

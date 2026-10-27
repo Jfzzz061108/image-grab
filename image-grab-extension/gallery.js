@@ -16,6 +16,7 @@ const progress = document.getElementById('progress');
 const progressFill = document.getElementById('progressFill');
 const progressText = document.getElementById('progressText');
 const toast = document.getElementById('toast');
+const errorMsg = document.getElementById('errorMsg');
 
 // 简单的 HTML 转义，防止 URL 中的特殊字符破坏结构
 function escapeHtml(str) {
@@ -27,6 +28,11 @@ function escapeHtml(str) {
 // 读取图片列表并渲染
 chrome.storage.session.get('images', (data) => {
   images = data.images || [];
+  const err = data.error || '';
+  if (err && errorMsg) {
+    errorMsg.textContent = '提示：' + err;
+    errorMsg.hidden = false;
+  }
   render();
 });
 
